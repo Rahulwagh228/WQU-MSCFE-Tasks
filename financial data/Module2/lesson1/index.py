@@ -81,9 +81,9 @@ f_shares = 1000 / f_price
 btc_shares = 1000 / btc_price
 
 # Print number of shares for each ticker
-print("Number of shares of AMZN:", np.round(amzn_shares, 3))
-print("Number of shares of F:", np.round(f_shares, 3))
-print("Number of shares of BTC-USD:", np.round(btc_shares, 3))
+# print("Number of shares of AMZN:", np.round(amzn_shares, 3))
+# print("Number of shares of F:", np.round(f_shares, 3))
+# print("Number of shares of BTC-USD:", np.round(btc_shares, 3))
 
 
 # Get last date values from df
@@ -95,9 +95,9 @@ f_price_end = last_row["F"]
 btc_price_end = last_row["BTC-USD"]
 
 # print end date prices
-print("End price of AMZN:", np.round(amzn_price_end, 3))
-print("End price of F:", np.round(f_price_end, 3)) 
-print("End price of BTC-USD:", np.round(btc_price_end, 3))
+# print("End price of AMZN:", np.round(amzn_price_end, 3))
+# print("End price of F:", np.round(f_price_end, 3)) 
+# print("End price of BTC-USD:", np.round(btc_price_end, 3))
 
 # Compute end date values for each ticker
 amzn_value = amzn_price_end * amzn_shares
@@ -110,5 +110,12 @@ print("Holding value of AMZN:", np.round(amzn_value, 3))
 print("Holding value of F:", np.round(f_value, 3))
 print("Holding value of BTC-USD:", np.round(btc_value, 3))
 
+# Compute simple returns
+amzn_return = (amzn_value - 1000) / 1000
+f_return = (f_value - 1000) / 1000
+btc_return = (btc_value - 1000) / 1000
 
-
+# Print the returns
+print("simple return of AMZN:", np.round(amzn_return, 3), "%")
+print("simple return of F:", np.round(f_return, 3), "%")
+print("simple return of BTC-USD:", np.round(btc_return, 3), "%")
